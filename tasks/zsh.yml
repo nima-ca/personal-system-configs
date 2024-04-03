@@ -1,0 +1,27 @@
+- name: Install ZSH
+  apt:
+    name: zsh
+  tags:
+    - zsh
+
+- name: Change shell
+  shell: chsh -s `which zsh`
+  tags:
+    - zsh
+
+- name: Install OhMyZsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  tags:
+    - zsh
+
+- name: Install the zsh autosuggestion plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/plugins/zsh-autosuggestions
+  tags:
+    - zsh
+
+- name: update our zshrc
+  shell: sed -i '/plugins=(git)/c\plugins=(git zsh-autosuggestions)' ~/.zshrc
+  tags:
+    - zsh
