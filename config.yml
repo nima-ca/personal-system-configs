@@ -8,3 +8,22 @@
         apt:
             update_cache: true
             cache_valid_time: 3600
+
+  tasks:
+      - name: Install ZSH
+        include_tasks:
+            file: tasks/zsh.yml
+            apply:
+                tags:
+                    - zsh
+        tags:
+            - zsh
+
+      - name: Install Node
+        include_tasks:
+            file: tasks/node.yml
+            apply:
+                tags:
+                    - node
+        tags:
+            - node
