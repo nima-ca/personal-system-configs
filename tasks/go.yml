@@ -1,0 +1,19 @@
+- name: Download Go archive file
+  get_url:
+      url: https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
+      dest: ./go1.22.1.linux-amd64.tar.gz
+      checksum: sha256:aab8e15785c997ae20f9c88422ee35d962c4562212bb0f879d052a35c8307c7f
+
+- name: Remove any previous Go installation
+  command: rm -rf /usr/local/go
+
+- name: Extract Go archive file
+  command: tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+
+- name: Add go env to .zshrc file
+  lineinfile:
+      dest: ~/.zshrc
+      line: export PATH=$PATH:/usr/local/go/bin
+
+- name: Set Go proxy
+  shell: export GOPROXY=https://goproxy.io,direct

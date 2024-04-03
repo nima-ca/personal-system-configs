@@ -36,3 +36,12 @@
                     - scripts
         tags:
             - scripts
+
+      - name: Install Go
+        include_tasks:
+            file: tasks/go.yml
+            apply:
+                tags:
+                    - go
+        tags:
+            - go
