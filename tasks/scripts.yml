@@ -1,0 +1,2 @@
+- name: Add some shell scripts to the .zshrc file
+  shell: echo "{{ lookup('file', '/assets/scripts.sh') }}" >> ~/.zshrc

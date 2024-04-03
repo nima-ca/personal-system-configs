@@ -27,3 +27,12 @@
                     - node
         tags:
             - node
+
+      - name: Add Scripts
+        include_tasks:
+            file: tasks/scripts.yml
+            apply:
+                tags:
+                    - scripts
+        tags:
+            - scripts
