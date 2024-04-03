@@ -15,3 +15,9 @@
 
 - name: update our zshrc
   shell: sed -i '/plugins=(git)/c\plugins=(git zsh-autosuggestions)' ~/.zshrc
+
+- name: update our .zshrc file to use autosuggestion, z, git and sudo plugins
+  ansible.builtin.lineinfile:
+      path: ~/.zshrc
+      regexp: "plugins=(git)"
+      line: "plugins=(git z zsh-autosuggestions sudo)"
