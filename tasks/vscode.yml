@@ -1,0 +1,37 @@
+- name: Download Vscode
+  get_url:
+      url: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+      dest: ./vscode.deb
+
+- name: Install Vscode
+  command: apt install ./vscode.deb -y
+
+- name: Install extensions
+  shell: |
+      code --install-extension adpyke.codesnap
+      code --install-extension bradlc.vscode-tailwindcss
+      code --install-extension britesnow.vscode-toggle-quotes
+      code --install-extension burkeholland.simple-react-snippets
+      code --install-extension christian-kohler.path-intellisense
+      code --install-extension codezombiech.gitignore
+      code --install-extension dbaeumer.vscode-eslint
+      code --install-extension deinsoftware.vitest-snippets
+      code --install-extension eamodio.gitlens
+      code --install-extension ecmel.vscode-html-css
+      code --install-extension esbenp.prettier-vscode
+      code --install-extension github.github-vscode-theme
+      code --install-extension github.vscode-github-actions
+      code --install-extension golang.go
+      code --install-extension mhutchie.git-graph
+      code --install-extension ms-azuretools.vscode-docker
+      code --install-extension ms-vscode.vscode-typescript-next
+      code --install-extension pkief.material-icon-theme
+      code --install-extension quicktype.quicktype
+      code --install-extension redhat.vscode-yaml
+      code --install-extension ritwickdey.liveserver
+      code --install-extension shalldie.background
+      code --install-extension streetsidesoftware.code-spell-checker
+      code --install-extension vitest.explorer
+      code --install-extension wayou.vscode-todo-highlight
+      code --install-extension xabikos.javascriptsnippets
+      code --install-extension yoavbls.pretty-ts-errors

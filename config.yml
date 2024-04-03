@@ -45,3 +45,12 @@
                     - go
         tags:
             - go
+
+      - name: Install Vscode & Extensions
+        include_tasks:
+            file: tasks/vscode.yml
+            apply:
+                tags:
+                    - vscode
+        tags:
+            - vscode
